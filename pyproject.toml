@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "lospec2aseprite"
-version = "0.1.0"
+version = "0.1.1"
 description = "Import palettes from Lospec to Aseprite"
 authors = ["Konosprod <konosprod@free.fr>"]
 license = "MIT"

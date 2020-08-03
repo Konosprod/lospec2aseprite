@@ -7,6 +7,12 @@ license = "MIT"
 include = ["LICENSE"]
 readme = "README.md"
 homepage = "https://github.com/Konosprod/lospec2aseprite"
+classifiers = [
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: End Users/Desktop",
+    "Environment :: Console"
+]
 
 [tool.poetry.dependencies]
 python = "^3.7"

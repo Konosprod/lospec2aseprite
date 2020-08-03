@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Import palettes from Lospec to Aseprite"
 authors = ["Konosprod <konosprod@free.fr>"]
 license = "MIT"
-include = ["lospec2aseprite/template.json"]
+include = ["LICENSE"]
+readme = "README.md"
+homepage = "https://github.com/Konosprod/lospec2aseprite"
 
 [tool.poetry.dependencies]
 python = "^3.7"

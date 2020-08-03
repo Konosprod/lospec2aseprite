@@ -9,6 +9,7 @@ import json
 import pathlib
 import argparse
 import platform
+import pkg_resources
 
 from progressbar import DataTransferBar
 from requests_download import download, HashTracker, ProgressTracker
@@ -100,9 +101,10 @@ def importLospec(url):
     jsonmetadata = ""
 
     if not JSON_FILE_PATH.exists():
-        template = pathlib.Path("./template.json")
-        f = open(template, mode="r")
-        jsonmetadata = json.load(f)
+
+        src = pkg_resources.resource_string(__name__, "template.json").decode("utf-8")
+
+        jsonmetadata = json.loads(src)
 
         if metadata.author != "":
             jsonmetadata["name"] = metadata.author
@@ -110,8 +112,6 @@ def importLospec(url):
             jsonmetadata["description"] = "Palettes created by " + metadata.author + " on Lospec"
             jsonmetadata["author"]["name"] = metadata.author
             jsonmetadata["author"]["url"] = metadata.authorUrl
-            
-        f.close()
     else:
         f = open(JSON_FILE_PATH, mode="r")
         jsonmetadata = json.load(f)
